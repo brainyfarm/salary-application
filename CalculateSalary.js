@@ -1,14 +1,12 @@
 function CalculateSalary(employeeLevel, noOfYears)
 {
-	var data = '{"interns": 50000,"associates": 65000,"managers": 100000,"executives": 115000,"directors": 130000}';
-
-	var json = JSON.parse(data);
+	var json = JSON.parse(salary);
 
 	var yearlySalary = json[employeeLevel]; 
+
+	var totalSalary;
 	
-	var salary;
+	totalSalary = yearlySalary * noOfYears;
 	
-	salary = yearlySalary * noOfYears;
-	
-	return salary;
+	return totalSalary;
 }
