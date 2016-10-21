@@ -1,161 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <script src="calculateSalary.js"></script>
   <script src="js/script.js"></script>
-  <script src="salary-data.js"></script>
+  <script src="data/salary-data.js"></script>
   <title> Salary Calculator System</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style>
+  <link rel="stylesheet" href="css/style.css">
 
-    /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;}
-    }
-  </style>
 </head>
+
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="#">SALARY APP</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-  
-<div class="container-fluid text-center">
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-    </div>
-    <div class="col-sm-8 text-left">
-      <form  onsubmit="return false;" name="loginform" ng-controller="formCtrl" class="form-horizontal" action="" method="post" >
-              
-            <div class="signup-form-container">         
-              <div class="well form-header">    
-                <div class="control-group">
-                  <label class="control-label" for="login_email">Employee Level</label>
-                  <div class="controls input-group">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <select class="form-control" required  id="employeelevel" name="employeelevel" class="selectpicker">
+  </nav>
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col-sm-8 text-left">
+        <form onsubmit="return false;" name="loginform" ng-controller="formCtrl" class="form-horizontal" action="" method="post">
+
+          <div class="signup-form-container">
+            <div class="well form-header">
+              <div class="control-group">
+                <label class="control-label" for="login_email">Employee Level</label>
+                <div class="controls input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <select class="form-control" required id="employeelevel" name="employeelevel" class="selectpicker">
                           <option value="intern">Intern</option> 
                           <option value="associate">Associate</option>
                           <option value="manager">Manager</option>
                           <option value="executive">Executive</option>
                           <option value="director">Director</option>
-                    </select> 
-                  
-                  </div>
-                  </div>
-                  
-                  <div class="control-group">
-                  <label class="control-label" for="login_psword">Years of Experience</label>
-                  <div class="controls input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input type="number" laceholder="Years of experience" class="form-control" required step="0.01" id="yearofexp" name="yearofexp"  min="0" >
-                  </div>
-                  </div>
-                  
-                  
-                  <br />
-                  
-                  <div class="control-group">
-                    <div class="controls input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-log-in"></i></span>
-                    <button  id="calc" class="btn btn-success">Calculate Salary</button>
-                  </div>
-                    <br />
-                    <p><a href="help.php">Help?</a></p>
-                  </div>
+                    </select>
+
+                </div>
               </div>
+
+              <div class="control-group">
+                <label class="control-label" for="login_psword">Years of Experience</label>
+                <div class="controls input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input type="number" laceholder="Years of experience" class="form-control" required step="0.01" id="yearofexp" name="yearofexp"
+                    min="0">
+                </div>
               </div>
-                        </form> 
-<script type="text/javascript">
 
-var btn = document.getElementById("calc");
-  btn.onclick = function() {
-    var salary = '{"intern": 50000,"associate": 65000,"manager": 100000,"executive": 11500,"director": 130000}';
-    var noOfyears = document.getElementById("yearofexp").value;
-    var e = document.getElementById("employeelevel");
-var employeeLevel = e.options[e.selectedIndex].value;
-var text = e.options[e.selectedIndex].text;
-  var json = JSON.parse(salary);
-  var yearlySalary = json[String(employeeLevel)];
-  var totalSalary = yearlySalary * noOfyears;
 
-document.getElementById("salaryReport").innerHTML = "The total salary for "+employeeLevel+" with "+noOfyears+" is: "+totalSalary;
+              <br />
 
-}
-</script>
-                        <!-- Modal content -->
-<div class="modal-content">
-  <div class="modal-header">
-    <span class="close">×</span>
-    <h2>Salary Report</h2>
-  </div>
-  <div class="modal-body">
-    <p style="font-weight: bold;font-size:medium;" id = "salaryReport">No report to show</p>
-  </div>
-</div>
-    </div>
-    <div class="col-sm-2 sidenav">
-      
+              <div class="control-group">
+                <div class="controls input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-log-in"></i></span>
+                  <button id="calc" class="btn btn-success">Calculate Salary</button>
+                </div>
+                <br />
+                <p><a href="#">Help?</a></p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <script src="js/app.js"></script>
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Salary Report</h2>
+          </div>
+          <div class="modal-body">
+            <p style="font-weight: bold;font-size:medium;" id="salaryReport">No report to show</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2 sidenav">
+
+      </div>
     </div>
   </div>
-</div>
 
-<footer class="container-fluid text-center" style="position:fixed;
+  <footer class="container-fluid text-center" style="position:fixed;
    left:0px;bottom:0px;height:30px;width:100%;">
-  <p>Footer Text</p>
-</footer>
+    <p>Footer Text</p>
+  </footer>
 
 </body>
-</html>
 
+</html>
