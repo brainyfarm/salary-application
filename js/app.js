@@ -7,7 +7,13 @@ btn.onclick = function () {
     var text = e.options[e.selectedIndex].text;
     var json = JSON.parse(salary);
     var yearlySalary = json[String(employeeLevel)];
-    var totalSalary = yearlySalary * noOfyears;
-
-    document.getElementById("salaryReport").innerHTML = "The total salary for " + employeeLevel + " with " + noOfyears + " year(s) of experience is: " + totalSalary;
+    var totalSalary = yearlySalary * noOfyears;  
+    if(noOfyears > 0)
+    {
+        document.getElementById("salaryReport").innerHTML = "The total salary for " + employeeLevel + " with " + noOfyears + " year(s) of experience is: " + totalSalary;
+    }
+    else
+    {
+    	document.getElementById("salaryReport").innerHTML = "No report to show";
+    }
 }
