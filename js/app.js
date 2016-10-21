@@ -9,5 +9,5 @@ btn.onclick = function () {
     var yearlySalary = json[String(employeeLevel)];
     var totalSalary = yearlySalary * noOfyears;
 
-    document.getElementById("salaryReport").innerHTML = "The total salary for " + employeeLevel + " with " + noOfyears + " is: " + totalSalary;
+    document.getElementById("salaryReport").innerHTML = "The total salary for " + employeeLevel + " with " + noOfyears + " year(s) of experience is: " + totalSalary;
 }
