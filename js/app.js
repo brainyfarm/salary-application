@@ -10,5 +10,4 @@ btn.onclick = function () {
     var totalSalary = yearlySalary * noOfyears;
 
     document.getElementById("salaryReport").innerHTML = "The total salary for " + employeeLevel + " with " + noOfyears + " is: " + totalSalary;
-
 }
